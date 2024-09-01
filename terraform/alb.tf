@@ -10,6 +10,9 @@ resource "aws_lb" "alb" {
   }
 }
 
+output "alb_arn" {
+  value = aws_lb.alb.arn
+}
 output "alb_fqdn" {
   value = aws_lb.alb.dns_name
 }
@@ -28,4 +31,8 @@ resource "aws_lb_listener" "listener_http" {
       status_code  = "200"
     }
   }
+}
+
+output "listener_arn" {
+  value = aws_lb_listener.listener_http.arn
 }
