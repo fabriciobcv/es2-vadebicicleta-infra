@@ -3,7 +3,7 @@ resource "aws_lb" "alb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.alb_sg.id]
-  subnets            = [local.subnet_id]
+  subnets            = [local.subnet_id1, local.subnet_id2]
 
   tags = {
     Name = "es2-vadebicicleta-${local.app_name}"
